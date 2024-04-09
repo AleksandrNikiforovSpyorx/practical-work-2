@@ -27,18 +27,19 @@ namespace practical_Work_2 //Задания 1 и 2
             double midleMark = (allMarks / 3); 
 
             /// Преобразование среднего балла в значение с одним знаком после запятой
-            string midleMarkFormated = midleMark.ToString("#.#"); 
-           
+            string midleMarkFormated = midleMark.ToString("#.#");
+
             /// Каждая переменная с новой стоки
-            string pattern =
-                "\n" +
-                "ФИО: {0} \n" +
-                "Возраст: {1} \n" +
-                "Электронная почта: {2} \n" +
-                "Баллы по программированию: {3} \n" +
-                "Баллы по математике: {4} \n" +
-                "Баллы по физике: {5} \nСумма балов: {6} \n" +
-                "Средний балл: {7} ";
+            //string pattern =
+            //    "\n" +
+            //    "ФИО: {0} \n" +
+            //    "Возраст: {1} \n" +
+            //    "Электронная почта: {2} \n" +
+            //    "Баллы по программированию: {3} \n" +
+            //    "Баллы по математике: {4} \n" +
+            //    "Баллы по физике: {5} \n" +
+            //    "Сумма балов: {6} \n" +
+            //    "Средний балл: {7} ";  /// Каждая переменная с новой стоки без интерполяцуии
 
             //Ввод в консоли нажатой клавиши
             ConsoleKeyInfo input;
@@ -56,21 +57,34 @@ namespace practical_Work_2 //Задания 1 и 2
                 /// После нажатия любой кнопки появится информация
                 input = Console.ReadKey(true);
 
-                /// Вывод на консоль всей инофрмации
-                Console.WriteLine(pattern,   
-                fullName,
-                age,
-                eMail,
-                programmingMark,
-                mathMark,
-                physicsMark,
-                allMarks,
-                midleMarkFormated);
 
-                // Для создания пустой строки(оступа)
+                /// Вывод на консоль всей инофрмации
+                //Console.WriteLine(pattern,   
+                //fullName,
+                //age,
+                //eMail,
+                //programmingMark,
+                //mathMark,
+                //physicsMark,
+                //allMarks,
+                //midleMarkFormated); /// Вывод на консоль всей инофрмации без интреполяции
+
+
+                /// Вывод методом интерполяции
+                Console.WriteLine($"\nФИО: {fullName}" +
+                    $"\nВозраст: {age}" +
+                    $"\neMail: {eMail}" +
+                    $"\nБаллы по программированию: {programmingMark}" +
+                    $"\nБаллы по математике: {mathMark}" +
+                    $"\nБаллы по физике: {physicsMark}" +
+                    $"\nСумма баллов: {allMarks}" +
+                    $"\nСредний балл: {midleMarkFormated}");
+
+
+                /// Для создания пустой строки(оступа)
                 Console.WriteLine(); 
             }
-            // при нажатии ESC консоль закрывается
+            /// при нажатии ESC консоль закрывается
             while (input.Key != ConsoleKey.Escape); 
 
 
