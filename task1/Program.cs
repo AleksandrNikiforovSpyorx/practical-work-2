@@ -20,25 +20,44 @@ namespace practical_Work_2 //Задания 1 и 2
             byte mathMark = 5; /// значение  баллы по математике
             double physicsMark = 4.1; /// значение  баллы по физике
 
-            double allMarks = (programmingMark + mathMark + programmingMark); /// Значение суммы всех балов
-            
-            double midleMark = (allMarks / 3); /// Расчет среднего балла по всем предметам
+            /// Значение суммы всех балов
+            double allMarks = (programmingMark + mathMark + programmingMark); 
+
+            /// Расчет среднего балла по всем предметам
+            double midleMark = (allMarks / 3); 
+
+            /// Преобразование среднего балла в значение с одним знаком после запятой
+            string midleMarkFormated = midleMark.ToString("#.#"); 
            
-            string midleMarkFormated = midleMark.ToString("#.#") ; /// Преобразование среднего балла в значение с одним знаком после запятой
+            /// Каждая переменная с новой стоки
+            string pattern =
+                "\n" +
+                "ФИО: {0} \n" +
+                "Возраст: {1} \n" +
+                "Электронная почта: {2} \n" +
+                "Баллы по программированию: {3} \n" +
+                "Баллы по математике: {4} \n" +
+                "Баллы по физике: {5} \nСумма балов: {6} \n" +
+                "Средний балл: {7} ";
+
+            //Ввод в консоли нажатой клавиши
+            ConsoleKeyInfo input;
+           
             
-            string pattern = "\nФИО: {0} \nВозраст: {1} \nЭлектронная почта: {2} \nБаллы по программированию: {3} \nБаллы по математике: {4} \nБаллы по физике: {5} \nСумма балов: {6} \nСредний балл: {7} "; /// Каждая переменная с новой стоки
-
-
-            ConsoleKeyInfo input; //Ввод в консоли нажатой клавиши
-            do /// выполнение операции пока input = Console.ReadKey(true)
+            /// выполнение операции пока input = Console.ReadKey(true)
+            do 
             {
-                Console.WriteLine("Нажмите любую кнопку"); // Вывод текчта в консоль 
-                Console.WriteLine("Нажмите Esc чтобы выйти."); /// Вывод текчта в консоль
-               
-                input = Console.ReadKey(true); /// После нажатия любой кнопки появится информация
+                /// Вывод текчта в консоль 
+                Console.WriteLine("Нажмите любую кнопку"); 
 
+                /// Вывод текчта в консоль
+                Console.WriteLine("Нажмите Esc чтобы выйти.");
 
-                Console.WriteLine(pattern,    /// Вывод на консоль всей инофрмации
+                /// После нажатия любой кнопки появится информация
+                input = Console.ReadKey(true);
+
+                /// Вывод на консоль всей инофрмации
+                Console.WriteLine(pattern,   
                 fullName,
                 age,
                 eMail,
@@ -47,8 +66,12 @@ namespace practical_Work_2 //Задания 1 и 2
                 physicsMark,
                 allMarks,
                 midleMarkFormated);
-                Console.WriteLine(); // Для создания пустой строки(оступа)
-            } while (input.Key != ConsoleKey.Escape); // при нажатии ESC консоль закрывается
+
+                // Для создания пустой строки(оступа)
+                Console.WriteLine(); 
+            }
+            // при нажатии ESC консоль закрывается
+            while (input.Key != ConsoleKey.Escape); 
 
 
 
